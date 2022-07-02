@@ -1,7 +1,7 @@
 name: ShieldHub
 main: com.xism4.shieldhub.ShieldHub
 authors: [ xIsm4 ]
-version: 0.0.1
+version: 0.0.2
 api-version: "1.13"
 softdepend: [ PlaceholderAPI ]
 
