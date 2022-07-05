@@ -1,2 +1,10 @@
 hub:
-  joinmessage: '&bPlayer %player_name% has joined'
+  - "&7&m---------------------------------------"
+  - ""
+  - "&eWelcome to &b&YourNetwork"
+  - ""
+  - "&7&l%bullet_point% &aStore: &fstore.yournetwork.club"
+  - "&7&l%bullet_point% &aDiscord: &fdiscord.gg/YourDiscord"
+  - "&7&l%bullet_point% &aTwitter: &ftwitter.com/YourTwitter"
+  - ""
+  - "&7&m---------------------------------------"

@@ -18,6 +18,10 @@ public class ShieldHubCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
+            sender.sendMessage(
+                    PlaceHolderUtils.colorize("&cYou can't use commands on console"
+            ));
+        }
             if (args.length <= 0) {
                 sender.sendMessage(
                         PlaceHolderUtils.colorize("&eUse &6/shieldhub help &fto see more info about the plugin")
@@ -27,8 +31,7 @@ public class ShieldHubCommand implements CommandExecutor {
             if (args[0].equalsIgnoreCase("reload")) {
                 // empty
             }
-        }
-        return true;
+            return true;
     }
 }
 

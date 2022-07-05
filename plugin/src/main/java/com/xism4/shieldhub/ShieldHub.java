@@ -7,11 +7,10 @@ import com.xism4.shieldhub.utils.managers.ConfigurationManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Objects;
-
 public class ShieldHub extends JavaPlugin {
 
     private static ShieldHub instance;
+    private ConfigurationManager config;
 
     public static ShieldHub getInstance() {
         return instance;
@@ -23,7 +22,8 @@ public class ShieldHub extends JavaPlugin {
                 Bukkit.getVersion());
         commandHandler();
         eventHandler();
-        ConfigurationManager.getMessages();
+        this.config = new ConfigurationManager(
+                this,"config.yml");
     }
 
     @Override
@@ -32,12 +32,16 @@ public class ShieldHub extends JavaPlugin {
     }
 
     public void commandHandler() {
-        Objects.requireNonNull(this.getCommand("shieldhub")).setExecutor(
+        this.getCommand("shieldhub").setExecutor(
                 new ShieldHubCommand(this));
     }
 
     public void eventHandler() {
         getServer().getPluginManager().registerEvents(new PlayerJoinHandler(this), this);
         getServer().getPluginManager().registerEvents(new WeatherHandler(this),this);
+    }
+    
+    public ConfigurationManager configurationManager(){
+        return config;
     }
 }

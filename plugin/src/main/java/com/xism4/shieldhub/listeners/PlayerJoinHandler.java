@@ -1,9 +1,8 @@
 package com.xism4.shieldhub.listeners;
 
 import com.xism4.shieldhub.ShieldHub;
-import com.xism4.shieldhub.utils.PlaceHolderUtils;
 import com.xism4.shieldhub.utils.managers.ConfigurationManager;
-import net.md_5.bungee.api.ChatMessageType;
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,9 +23,21 @@ public class PlayerJoinHandler implements Listener {
 
     @EventHandler
     public void PlayerEntryHandler(PlayerJoinEvent event) {
-        event.setJoinMessage(ChatMessageType.CHAT +
-                PlaceHolderUtils.colorize(configurationManager.getString("hub.joinMessage")));
+        Player player = event.getPlayer();
+        event.setJoinMessage(null);
+        player.setHealth(20);
+
+        for (Player p : Bukkit.getOnlinePlayers())
+            p.hidePlayer(player);
+        for (Player p : Bukkit.getOnlinePlayers())
+            player.hidePlayer(p);
     }
+    /* //fixme: Just ill keep it here until new configManager
+        List<String> list = PlaceholderAPI.setPlaceholders(player, configurationManager.getStringList("hub.joinmessage"));
+        for (String s : list) {
+            player.sendMessage(PlaceHolderUtils.colorize(s).replace("%player%", player.getName()).replace("%bullet_point%", "•"));
+        }
+     */
 
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
