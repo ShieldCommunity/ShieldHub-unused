@@ -1,7 +1,7 @@
 package com.xism4.shieldhub.commands;
 
 import com.xism4.shieldhub.ShieldHub;
-import com.xism4.shieldhub.listeners.utils.PlaceHolderUtils;
+import com.xism4.shieldhub.utils.PlaceHolderUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

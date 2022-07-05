@@ -1,4 +1,4 @@
-package com.xism4.shieldhub.listeners.utils;
+package com.xism4.shieldhub.utils;
 
 import com.xism4.shieldhub.ShieldHub;
 import me.clip.placeholderapi.PlaceholderAPI;

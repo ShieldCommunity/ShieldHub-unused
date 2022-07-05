@@ -1,8 +1,9 @@
 package com.xism4.shieldhub;
 
 import com.xism4.shieldhub.commands.ShieldHubCommand;
-import com.xism4.shieldhub.listeners.ShieldListener;
-import com.xism4.shieldhub.listeners.utils.managers.ConfigurationManager;
+import com.xism4.shieldhub.listeners.PlayerJoinHandler;
+import com.xism4.shieldhub.listeners.WeatherHandler;
+import com.xism4.shieldhub.utils.managers.ConfigurationManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -36,6 +37,7 @@ public class ShieldHub extends JavaPlugin {
     }
 
     public void eventHandler() {
-        getServer().getPluginManager().registerEvents(new ShieldListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoinHandler(this), this);
+        getServer().getPluginManager().registerEvents(new WeatherHandler(this),this);
     }
 }

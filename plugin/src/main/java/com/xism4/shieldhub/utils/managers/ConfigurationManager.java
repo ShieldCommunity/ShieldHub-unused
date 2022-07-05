@@ -1,4 +1,4 @@
-package com.xism4.shieldhub.listeners.utils.managers;
+package com.xism4.shieldhub.utils.managers;
 
 import com.xism4.shieldhub.ShieldHub;
 import org.bukkit.configuration.file.YamlConfiguration;
